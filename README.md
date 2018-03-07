@@ -16,7 +16,10 @@ next sentences, and so on.
 git clone https://github.com/crabdul/story-maker.git
 npm install
 ```
-
+### Running application
+```
+node app.js
+```
 
 ## Author
 
