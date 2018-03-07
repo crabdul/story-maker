@@ -4,7 +4,9 @@ const story = require('../lib/story');
 const util = require('../lib/util');
 
 router.get('^(/[0-4])*$', (req, res) => {
+  // Get path id from path params
   let id = util.getId(req);
+  // Get story options
   let options = story.getOptions(id)
   res.render('index', {
     opt_0: options[0],
@@ -17,11 +19,11 @@ router.get('^(/[0-4])*$', (req, res) => {
 });
 
 router.post('/submit', (req, res, next) => {
-
+  // Add option to current path
   story.addOption(req.body.option, req.body.id, req.body.branch);
-
+  // Get previous path
   backURL = req.header('Referer') || '/';
-  // do your thang
+  // Redirect to previous path
   res.redirect(backURL);
 })
 
