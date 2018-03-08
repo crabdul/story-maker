@@ -101,6 +101,7 @@ The templating uses [handlebars](https://handlebarsjs.com/)
 + layouts/base - base template with link to main stylsheet
 + partials/option - partial with conditionally rendered form or option link
 
+## How it works
 
 ### Story module
 
@@ -125,12 +126,12 @@ The user is then redirected back to the page which referred them and a link with
 The URL path for the links are created from the id of the current story path and the index of the branch i.e if `id = 023` and `branch-index = 4` then the id for the next path is `0234`. The util library contains a function for creating this id.
 
 
-### Shortcuts taken
+## Shortcuts taken
 
 Because the rendered path is dependent on the URL path and the id for the base story path `id = 0`, the user must start at `localhost:3000/0`
 
 
-### What is the exercise testing?
+## What is the exercise testing?
 
 **Ability to:**
 + follow a brief, identify the main features and implement them in a reasonable amount of time.
