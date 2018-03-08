@@ -14,11 +14,11 @@ next sentences, and so on.
 
 ```
 git clone https://github.com/crabdul/story-maker.git
+cd story-maker
 npm install
 ```
 ### Running application
 ```
-cd story-maker
 node app.js
 ```
 Go to localhost:3000/0
