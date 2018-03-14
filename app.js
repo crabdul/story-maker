@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const hbs = require('express-handlebars');
-const helper = require('./lib/hbs-helpers');
+const helper = require('./lib/helpers/hbs-helpers');
 
 const routes = require('./routes/index');
 

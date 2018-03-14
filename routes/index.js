@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const story = require('../lib/story');
-const util = require('../lib/util');
+const util = require('../lib/helpers/util');
 
 router.get('^(/[0-4])*$', (req, res) => {
   // Get path id from path params
@@ -20,7 +20,7 @@ router.get('^(/[0-4])*$', (req, res) => {
 
 router.post('/submit', (req, res, next) => {
   // Add option to current path
-  story.addOption(req.body.option, req.body.id, req.body.branch);
+  if (req.body.option) story.addOption(req.body.option, req.body.id, req.body.branch);
   // Get previous path
   backURL = req.header('Referer') || '/';
   // Redirect to previous path
