@@ -1,14 +1,13 @@
 <div class="story-block">
-    {{#if opt}}
-        <a {{{href id branch }}}>{{ opt }}</a>
-    {{/if}}
-    {{^if opt}}
+    <% if (option) { %>
+        <a href="<%= option[0] %>"><%= option[1] %><p/>
+    <% } else { %>  
         <form action="/submit" method="post">
             <textarea rows="2" cols="40" name="option" value="1" id="a"></textarea>
-            <input type="hidden" name="branch" value='{{ branch }}'>
-            <input type="hidden" name="id" value='{{ id }}'>
+            <input type="hidden" name="branch" value='<%= branch %>'>
+            <input type="hidden" name="id" value='<%= id %>'>
             <br>
             <button type="submit">Submit</button> 
         </form>
-    {{/if}}
+    <% } %>
 </div>

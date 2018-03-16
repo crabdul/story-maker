@@ -1,0 +1,19 @@
+<a href="/0">Back to the Start</a>
+
+<table>
+  <tr>
+    <td></td>
+    <td><%- include('partials/option.ejs', {option: opts[1], id: id, branch: 1}) %></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><%- include('partials/option.ejs', {option: opts[2], id: id, branch: 2}) %></td>
+    <td><%- opts[0] %></td> 
+    <td><%- include('partials/option.ejs', {option: opts[3], id: id, branch: 3}) %></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><%- include('partials/option.ejs', {option: opts[4], id: id, branch: 4}) %></td>
+    <td></td>
+  </tr>
+</table>

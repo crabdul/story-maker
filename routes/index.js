@@ -1,29 +1,29 @@
 const express = require('express');
 const router = express.Router();
-const story = require('../lib/story');
-const util = require('../lib/helpers/util');
+// const story = require('../lib/story');
 
-router.get('^(/[0-4])*$', (req, res) => {
-  // Get path id from path params
-  let id = util.getId(req);
-  // Get story options
-  let options = story.getOptions(id)
+let paths = [];
+// [id of previous path, branch id, string]
+paths[0] = ['', 0, 'Once Upon a time, there was a wolf'];
+
+router.get('/:id', (req, res) => {
+  let opts = new Array(5);
+  let id = req.params.id;
+  opts[0] = paths[id][2]; 
+  for (let i = 0; i < paths.length; i++) {
+    let e = paths[i];  
+    if(e[0] == id) opts[e[1]] = [i, e[2]]
+  } 
   res.render('index', {
-    opt_0: options[0],
-    opt_1: options[1],
-    opt_2: options[2], 
-    opt_3: options[3],
-    opt_4: options[4],
+    opts,
     id
   })
 });
 
 router.post('/submit', (req, res, next) => {
-  // Add option to current path
-  if (req.body.option) story.addOption(req.body.option, req.body.id, req.body.branch);
-  // Get previous path
+  let p = req.body;
+  if (p.option) paths.push([p.id, p.branch, p.option])
   backURL = req.header('Referer') || '/';
-  // Redirect to previous path
   res.redirect(backURL);
 })
 
