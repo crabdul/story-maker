@@ -1,8 +1,5 @@
 # Story Maker
 
-Web application which enables the user to write "multi-path stories." A multi-path story is composed of sentences. 
-After each sentence, there are up to four possible next sentences, and after each of those, another four possible 
-next sentences, and so on.
 
 ## Getting Started
 
@@ -129,13 +126,4 @@ The URL path for the links are created from the id of the current story path and
 ## Shortcuts taken
 
 Because the rendered path is dependent on the URL path and the id for the base story path `id = 0`, the user must start at `localhost:3000/0`
-
-
-## What is the exercise testing?
-
-**Ability to:**
-+ follow a brief, identify the main features and implement them in a reasonable amount of time.
-+ appropraitely structure a project from based on a brief.
-+ dynamically create pages which are related by dynamically created links using POST and GET requests
-+ rendering appropriate data based on URL path
 
